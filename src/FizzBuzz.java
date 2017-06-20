@@ -9,11 +9,32 @@
 //Bonus: For every third Fizz print Fizzy! and for every fourth 
 //Buzz print Buzzy! and for every third FizzBuzz make up your own word or phrase.
 
+import java.util.*;
 
 public class FizzBuzz {
 	public static void main(String[]args){
-		for (int i = 1; i <= 100; i++){
 			
+		Scanner scan = new Scanner(System.in);
+			
+			
+		System.out.println("Please enter starting and ending numbers, separated by spaces");
+		int start = scan.nextInt();
+		int end = scan.nextInt();
+		
+		if (end < start){
+			int temp = start;
+			start = end;
+			end = temp;
+		}
+		
+		engageFizzBuzz(start,end);
+	}
+			
+
+		
+	static void engageFizzBuzz(int start, int end){
+		
+		for (int i = start; i <= end; i++){
 			String word = "";
 			
 			if ((i%3) == 0 && (i%5) == 0){
@@ -40,9 +61,8 @@ public class FizzBuzz {
 			}
 			
 			System.out.println(word);
-			
-			
-			
 		}
+		
+		
 	}
 }
